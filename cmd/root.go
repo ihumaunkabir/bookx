@@ -16,7 +16,7 @@ var (
 	rootCmd = &cobra.Command{
 		Use:   "bookx",
 		Short: "An api for book informations",
-		Long: `A long desccription`,
+		Long:  `A long desccription`,
 	}
 )
 
@@ -47,7 +47,7 @@ func initConfig() {
 		// Find home directory.
 		home, err := homedir.Dir()
 		if err != nil {
-			fmt.Println("Error Occured, root.go, homedir")
+			fmt.Println("Error Occurred, root.go, homedir")
 		}
 
 		// Search config in home directory with name ".bookx" (without extension).

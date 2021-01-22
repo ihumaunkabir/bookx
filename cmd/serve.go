@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/spf13/cobra"
 	"github.com/oasiscse/bookx/routes"
+	"github.com/spf13/cobra"
 )
 
 // serveCmd represents the serve command

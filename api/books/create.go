@@ -9,6 +9,7 @@ import (
 	data "github.com/oasiscse/bookx/data/api"
 )
 
+//Create creates data in db 
 func Create(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")

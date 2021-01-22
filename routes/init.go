@@ -8,6 +8,7 @@ import (
 	books "github.com/oasiscse/bookx/api/books"
 )
 
+//GetRoutes gets all api routes
 func GetRoutes() {
 
 	r := mux.NewRouter()

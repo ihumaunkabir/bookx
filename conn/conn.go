@@ -6,15 +6,14 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	
+
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-
+//ConnectDB connects db and returns collection
 func ConnectDB() *mongo.Collection {
 
-	
 	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 	//clientOptions := options.Client().ApplyURI("mongodb://bookx:bookx123@ds217809.mlab.com:17809/bookx?retryWrites=false")
 	client, err := mongo.Connect(context.TODO(), clientOptions)
@@ -30,13 +29,13 @@ func ConnectDB() *mongo.Collection {
 	return collection
 }
 
-
+//ErrorResponse definees error response
 type ErrorResponse struct {
 	StatusCode   int    `json:"status"`
 	ErrorMessage string `json:"message"`
 }
 
-
+//GetError gets error
 func GetError(err error, w http.ResponseWriter) {
 
 	log.Fatal(err.Error())

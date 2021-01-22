@@ -1,17 +1,18 @@
 package books
 
-import(
+import (
 	"context"
 	"encoding/json"
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"go.mongodb.org/mongo-driver/bson"
 	"github.com/oasiscse/bookx/conn"
 	"github.com/oasiscse/bookx/data/api"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
-func GetByID(w http.ResponseWriter, r *http.Request){
+//GetByID read book by id
+func GetByID(w http.ResponseWriter, r *http.Request) {
 	var book data.Book
 	var params = mux.Vars(r)
 	bookid := string(params["bookid"])
@@ -22,7 +23,7 @@ func GetByID(w http.ResponseWriter, r *http.Request){
 
 	if err != nil {
 		w.Write([]byte(`{"message": "Book not found, param=id"}`))
-	} else{
+	} else {
 		json.NewEncoder(w).Encode(book)
 	}
 

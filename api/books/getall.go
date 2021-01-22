@@ -1,16 +1,17 @@
 package books
 
-import(
+import (
 	"context"
 	"encoding/json"
 	"log"
 	"net/http"
 
-	"go.mongodb.org/mongo-driver/bson"
 	"github.com/oasiscse/bookx/conn"
 	"github.com/oasiscse/bookx/data/api"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
+//GetBooks read all book info
 func GetBooks(w http.ResponseWriter, r *http.Request) {
 	var books []data.Book
 	collection := conn.ConnectDB()
@@ -28,7 +29,7 @@ func GetBooks(w http.ResponseWriter, r *http.Request) {
 
 		var book data.Book
 
-		err := cur.Decode(&book) 
+		err := cur.Decode(&book)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -40,5 +41,5 @@ func GetBooks(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	json.NewEncoder(w).Encode(books) 
+	json.NewEncoder(w).Encode(books)
 }
