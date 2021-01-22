@@ -1,4 +1,5 @@
-## Bookx
+
+## Bookx [![Go Report Card](https://goreportcard.com/badge/github.com/ihumaunkabir/bookx)](https://goreportcard.com/report/github.com/ihumaunkabir/bookx)
 
 Bookx is a simple API built in GO and MongoDB.
 
